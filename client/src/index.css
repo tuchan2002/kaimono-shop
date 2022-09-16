@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-m-plus1 text-base;
+  }
+  h1 {
+    @apply text-4xl font-bold;
+  }
+  h2 {
+    @apply text-3xl font-bold;
+  }
+  h3 {
+    @apply text-2xl font-bold;
+  }
+  h4 {
+    @apply text-lg font-bold;
+  }
+  h5 {
+    @apply text-sm font-bold;
+  }
+}
+
+@layer utilities {
+  .custom-shadow {
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 12%), 0 -2px 2px 0 rgb(0 0 0 / 4%);
+  }
+
+  .custom-shadow:hover {
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 12%), 0 -4px 8px 0 rgb(0 0 0 / 4%);
+  }
+
+  .custom-checkbox > input[type="checkbox"] {
+    margin: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  .custom-checkbox > input[type="checkbox"] + label {
+    margin: 8px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+  }
+
+  .custom-checkbox > input[type="checkbox"]:checked + label::before {
+    content: "\002714";
+    font-size: 25px;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .reviews > input[type="radio"] {
+    display: none;
+  }
+  .reviews > input[type="radio"]:checked ~ label > * {
+    color: #facc15;
+  }
+  .line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+}
